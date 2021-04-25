@@ -2,9 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 
+require("./models/User"); // Need to require it first as we are registering the schema for the model "users"
 require("./services/passport");
 // const authRoutes = require("./routes/authRoutes");
-require("./models/User");
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
