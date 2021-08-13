@@ -1,7 +1,8 @@
+// requiring the libraries
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const mongoose = require("mongoose");
 const keys = require("../config/keys");
+const mongoose = require("mongoose");
 
 const User = mongoose.model("users");
 
@@ -15,6 +16,7 @@ passport.deserializeUser((id, done) => {
   });
 });
 
+// creating an instance of GoogleStrategy
 passport.use(
   new GoogleStrategy(
     {
@@ -24,8 +26,6 @@ passport.use(
       proxy: true,
     },
     async (accessToken, refreshToken, profile, done) => {
-      // console.log("Access Token", accessToken);
-      // console.log("Profile", profile);
       const existingUser = await User.findOne({ googleId: profile.id });
       if (existingUser) {
         return done(null, existingUser);
