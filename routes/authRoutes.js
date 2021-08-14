@@ -1,11 +1,13 @@
 const passport = require("passport");
 
 module.exports = (app) => {
+  // handler to kick the OAuth flow
   app.get(
     "/auth/google",
     passport.authenticate("google", { scope: ["profile", "email"] })
   );
 
+  // authorized uri redirect
   app.get(
     "/auth/google/callback",
     passport.authenticate("google"),
