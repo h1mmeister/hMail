@@ -1,3 +1,4 @@
+// requiring the libraries
 const passport = require("passport");
 
 module.exports = (app) => {

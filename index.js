@@ -7,9 +7,9 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const { cookieKey } = require("./config/keys");
 
-require("./models/User"); // Need to require it first as we are registering the schema for the model "users"
-require("./services/passport");
-// const authRoutes = require("./routes/authRoutes");
+// Need to require it first as we are registering the schema for the model "users"
+require("./models/User");
+require("./services/passport"); // const authRoutes = require("./routes/authRoutes");
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
@@ -30,7 +30,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// authRoutes(app);
+// using authRoutes
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 
