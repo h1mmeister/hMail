@@ -1,9 +1,9 @@
 // requiring the libraries
 const express = require("express");
+const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const { cookieKey } = require("./config/keys");
 
@@ -11,6 +11,7 @@ const { cookieKey } = require("./config/keys");
 require("./models/User");
 require("./services/passport"); // const authRoutes = require("./routes/authRoutes");
 
+// used to connect to mongoDB and resolve some dependency warnings
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
   useCreateIndex: true,
