@@ -4,6 +4,7 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("../config/keys");
 const mongoose = require("mongoose");
 
+// one argument means we are trying to fetch something out of mongoose - NOT creating the model class here
 const User = mongoose.model("users");
 
 passport.serializeUser((user, done) => {
