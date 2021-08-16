@@ -7,7 +7,7 @@ const passport = require("passport");
 const keys = require("./config/keys");
 const { cookieKey } = require("./config/keys");
 
-// Need to require it first as we are registering the schema for the model "users"
+// need to require it first as we are registering the schema for the model "users"
 require("./models/User");
 require("./services/passport"); // const authRoutes = require("./routes/authRoutes");
 

@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 // one argument means we are trying to fetch something out of mongoose - NOT creating the model class here
 const User = mongoose.model("users");
 
+// serializing the user
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -31,6 +32,7 @@ passport.use(
       if (existingUser) {
         return done(null, existingUser);
       }
+      // creating the new user if the profile.id doesn't exist in database
       const user = await new User({ googleId: profile.id }).save();
       done(null, user);
     }
