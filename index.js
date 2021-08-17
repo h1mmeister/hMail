@@ -28,6 +28,7 @@ app.use(
   })
 );
 
+// telling passport to use cookies for authentication
 app.use(passport.initialize());
 app.use(passport.session());
 
