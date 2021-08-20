@@ -1,3 +1,4 @@
+// importing the libraries
 import materializeCSS from "materialize-css/dist/css/materialize.min.css";
 
 import React from "react";
@@ -9,8 +10,10 @@ import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers";
 
+// creating the redux store
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
+// provider helps the child components to get the state from the store
 ReactDOM.render(
   <Provider store={store}>
     <App />
