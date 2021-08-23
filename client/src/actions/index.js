@@ -8,6 +8,7 @@ import { FETCH_USER } from "./types";
 //     .then((res) => dispatch({ type: FETCH_USER, payload: res }));
 // };
 
+// refactoring the v1 for the action creator
 export const fetchUser = () => async (dispatch) => {
   const res = await axios.get("/api/current_user");
   dispatch({ type: FETCH_USER, payload: res.data });

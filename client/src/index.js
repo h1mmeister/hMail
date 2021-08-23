@@ -1,6 +1,6 @@
 // importing the libraries
 // eslint-disable-next-line no-unused-vars
-import materializeCSS from "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/css/materialize.min.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
