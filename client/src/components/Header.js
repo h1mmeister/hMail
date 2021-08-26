@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Payments from "./Payments";
 
 class Header extends Component {
+  // this method shows the different phases of login button depending on the state
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -46,6 +47,7 @@ class Header extends Component {
   }
 }
 
+// this is called with the state of the application
 function mapStateToProps({ auth }) {
   return { auth };
 }
