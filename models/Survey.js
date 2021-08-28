@@ -8,6 +8,8 @@ const surveySchema = new Schema({
   body: String,
   subject: String,
   recipients: [String],
+  yes: { type: Number, default: 0 },
+  no: { type: Number, default: 0 },
 });
 
 // creating the model class

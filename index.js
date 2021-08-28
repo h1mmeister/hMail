@@ -9,6 +9,7 @@ const { cookieKey } = require("./config/keys");
 
 // need to require it first as we are registering the schema for the model "users"
 require("./models/User");
+require("./models/Survey");
 require("./services/passport"); // const authRoutes = require("./routes/authRoutes");
 
 // used to connect to mongoDB and resolve some dependency warnings
