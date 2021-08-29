@@ -36,6 +36,7 @@ app.use(passport.session());
 // using authRoutes
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 // this code will run only for production
 if (process.env.NODE_ENV === "production") {
